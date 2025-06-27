@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class MeleeWeapon : NewWeapon
 {
-    [Header("Stats")]
-    public float attackRange = 1f;
 
     public LayerMask enemyLayer;
 
@@ -17,7 +15,7 @@ public class MeleeWeapon : NewWeapon
         }
 
         float distance = Vector2.Distance(transform.position, target.position);
-        if (distance <= attackRange)
+        if (distance <= range)
         {
             DealDamage(target);
         }
@@ -26,7 +24,7 @@ public class MeleeWeapon : NewWeapon
     public override void Attack(Vector2 direction)
     {
         Vector2 origin = transform.position;
-        RaycastHit2D hit = Physics2D.Raycast(origin, direction. normalized, attackRange, enemyLayer);
+        RaycastHit2D hit = Physics2D.Raycast(origin, direction.normalized, range, enemyLayer);
 
         if (hit.collider != null)
         {

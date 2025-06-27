@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class RangedWeapon : NewWeapon
 {
-    // public float attackSpeed;
-
     [Header("Projectile")]
     public GameObject projectilePrefab;
     public GameObject movementPrefab;
@@ -22,6 +20,11 @@ public class RangedWeapon : NewWeapon
         
         Projectile proj = projObj.GetComponent<Projectile>();
         Mover mover = moverObj.GetComponent<Mover>();
+
+        if (proj != null)
+        {
+            proj.damage = projectileDamage;
+        }
 
         if (mover != null)
         {

@@ -79,7 +79,6 @@ public class Enemy : Character
     public void TakeDamage(int damage)
     {
         hitPoints -= damage;
-        Debug.Log("폭격으로 데미지: " + damage);
         if (hitPoints <= 0f)
             KillCharacter();
     }

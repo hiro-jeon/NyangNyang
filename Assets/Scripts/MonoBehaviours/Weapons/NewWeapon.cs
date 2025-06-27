@@ -4,8 +4,10 @@ using UnityEngine;
 
 public abstract class NewWeapon : MonoBehaviour
 {
-    public float attackSpeed;
+    [Header("Stats")]
+    public float speed;
     public float damage;
+    public float range;
 
     public abstract void Attack(Transform target);
     public abstract void Attack(Vector2 direction);

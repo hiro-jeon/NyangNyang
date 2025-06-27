@@ -11,8 +11,8 @@ GameObject:
   - component: {fileID: 692436984577111336}
   - component: {fileID: 692436984577111337}
   - component: {fileID: 692436984577111342}
-  - component: {fileID: 5307300063105834112}
   - component: {fileID: 8386752817267994359}
+  - component: {fileID: 3237151321135247476}
   m_Layer: 12
   m_Name: AmmoObject
   m_TagString: Untagged
@@ -96,26 +96,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 692436984577111343}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1fc32dfe725cbbe4eb876b95722444c4, type: 3}
+  m_Script: {fileID: 11500000, guid: 2fee0fab92174604784fa55108e6af45, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  damageInflicted: 1
---- !u!58 &5307300063105834112
-CircleCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 692436984577111343}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0}
-  serializedVersion: 2
-  m_Radius: 0.2
+  damageInflicted: 2
 --- !u!114 &8386752817267994359
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -128,3 +112,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e00ddf5f671199b40876c1e7c59f267c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!58 &3237151321135247476
+CircleCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 692436984577111343}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  serializedVersion: 2
+  m_Radius: 0.07
