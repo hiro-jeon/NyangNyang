@@ -44,9 +44,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0273f66d942222849a878af0ccfdb1db, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  attackSpeed: 1
-  damage: 2
-  projectilePrefab: {fileID: 6850060227708284587, guid: 1f4139815dd941841960634943c752b4, type: 3}
+  speed: 3
+  range: 3
+  damage: 1
+  projectilePrefab: {fileID: 6850060227708284587, guid: de6055ac030fab14999e9f0a299edc72, type: 3}
   movementPrefab: {fileID: 310503109489141203, guid: 1b5617cfee9611d44b233e5c78c43fbd, type: 3}
-  projectileDamage: 2
   projectileSpeed: 4

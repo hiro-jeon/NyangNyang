@@ -37,9 +37,7 @@ public class Inventory : MonoBehaviour
             {
                 items[i] = Instantiate(itemToAdd);
                 items[i].quantity = 1;
-                Debug.Log("items[i].objectName: " + items[i].objectName);
-                Debug.Log("items[i].sprite: " + items[i].sprite);
-                Debug.Log("itemImages" + items[i].sprite);
+
                 itemImages[i].sprite = items[i].sprite;
                 itemImages[i].enabled = true;
                 return true;

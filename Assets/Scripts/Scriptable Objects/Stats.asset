@@ -12,6 +12,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac57bf49d7392aa4cbc3a09add5ccab1, type: 3}
   m_Name: Stats
   m_EditorClassIdentifier: 
-  hitPoints: 6
-  exPoints: 24
-  level: 1
+  hitPoints: -1
+  exPoints: 78.5
+  level: 14

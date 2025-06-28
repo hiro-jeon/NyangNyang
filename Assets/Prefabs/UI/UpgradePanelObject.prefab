@@ -211,6 +211,7 @@ GameObject:
   - component: {fileID: 5720316582711056795}
   - component: {fileID: 5720316582711056772}
   - component: {fileID: 5720316582711056773}
+  - component: {fileID: 1169544624034373219}
   m_Layer: 5
   m_Name: UpgradePanelObject
   m_TagString: Untagged
@@ -301,6 +302,20 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &1169544624034373219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5720316582711056774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aabb7561f5050fd4b97bf48001031ee9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  testUpgrade: {fileID: 11400000, guid: 7d75772e866d34d47b3c5c63cf369a25, type: 2}
+  upgradeSlotPrefab: {fileID: 8994533657603110863, guid: 5d9f9d67e72ed214e910767a820d7010, type: 3}
 --- !u!1 &5720316583016829985
 GameObject:
   m_ObjectHideFlags: 0

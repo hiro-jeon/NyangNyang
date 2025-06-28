@@ -5,8 +5,8 @@ using UnityEngine;
 [RequireComponent(typeof(LineRenderer))]
 public class CircleRenderer : MonoBehaviour
 {
+    public float radius;
     public float duration = 5f; 
-    public float radius = 1f;
     public int segments = 50;
 
     private LineRenderer line;
@@ -16,6 +16,11 @@ public class CircleRenderer : MonoBehaviour
         line = GetComponent<LineRenderer>();
         line.positionCount = segments + 1;
         line.useWorldSpace = false;
+    }
+
+    public void Initialize(float radius)
+    {
+        this.radius = radius;
         DrawCircle();
     }
 

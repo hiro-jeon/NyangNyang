@@ -9,6 +9,7 @@ public class Enemy : Character
     public int damageStrength;
     Coroutine damageCoroutine;
     public GameObject coinPrefab;
+    public GameObject healthPrefab;
 
     public Player player;
 
@@ -46,11 +47,26 @@ public class Enemy : Character
 
     public override void KillCharacter()
     {
-        GameObject coin = Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        float coinChance = 0.25f;
+        if (Random.value < coinChance)
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        float healthChance = 0.10f;
+        if (Random.value < healthChance)
+            Instantiate(healthPrefab, transform.position, Quaternion.identity);
+        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
         player.GetExp(exPoints);
         base.KillCharacter();
     }
 
+    public void TakeDamage(int damage)
+    {
+        hitPoints -= damage;
+        if (hitPoints <= 0f)
+            KillCharacter();
+    }
+
+    // 플레이어와 닿으면
     void OnCollisionEnter2D(Collision2D collision)
     {
         if (collision.gameObject.CompareTag("Player"))
@@ -74,12 +90,5 @@ public class Enemy : Character
                 damageCoroutine = null;
             }
         }
-    }
-
-    public void TakeDamage(int damage)
-    {
-        hitPoints -= damage;
-        if (hitPoints <= 0f)
-            KillCharacter();
     }
 }

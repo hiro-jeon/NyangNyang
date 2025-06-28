@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 505712947551404541}
-  - component: {fileID: 8412305521331480924}
+  - component: {fileID: 5612680805644888427}
   m_Layer: 0
   m_Name: Claw
   m_TagString: Untagged
@@ -24,7 +24,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2805191296994562720}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
@@ -32,7 +32,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &8412305521331480924
+--- !u!114 &5612680805644888427
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -41,12 +41,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 2805191296994562720}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 884b24998315c0845ba6cd786117529e, type: 3}
+  m_Script: {fileID: 11500000, guid: e5cb20365c9deb249b15b9fbd0e7e531, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  damage: 2
-  range: 1
-  enemyLayer:
+  range: 1.25
+  damage: 4
+  innerRadius: 0.5
+  outerRadius: 0.7
+  targetLayer:
     serializedVersion: 2
     m_Bits: 2048
+  rendererPrefab: {fileID: 5525331821536949345, guid: 2ee1bc4bee94efd4e8dd90b742d9d7f8, type: 3}

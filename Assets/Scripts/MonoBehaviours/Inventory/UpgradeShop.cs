@@ -16,6 +16,7 @@ public class UpgradeShop : MonoBehaviour
         public Text level;
         public Text name;
         public Text details;
+        public Upgrade upgrade;
     }
 
     public List<UpgradeSlot> slotList = new List<UpgradeSlot>();
@@ -44,7 +45,8 @@ public class UpgradeShop : MonoBehaviour
                     image = newSlotObj.transform.GetChild(0).GetChild(2).GetComponent<Image>(),
                     level = newSlotObj.transform.GetChild(0).GetChild(1).GetChild(0).GetComponent<Text>(),
                     name = newSlotObj.transform.GetChild(0).GetChild(1).GetChild(1).GetComponent<Text>(),
-                    details = newSlotObj.transform.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>()
+                    details = newSlotObj.transform.GetChild(0).GetChild(1).GetChild(2).GetComponent<Text>(),
+                    upgrade = upgrade
                 };
                 
                 slotList.Add(newSlot);
@@ -60,6 +62,7 @@ public class UpgradeShop : MonoBehaviour
         slot.name.text = upgrade.objectName;
         slot.details.text = upgrade.details;
         slot.gameObject.SetActive(true);
+        slot.image.enabled = true;
     }
 
     void SlotEventLister()
@@ -74,16 +77,13 @@ public class UpgradeShop : MonoBehaviour
 
     void OnSlotClicked(UpgradeSlot slot)
     {
-        Debug.Log("업그레이드 선택 완료: " + slot.gameObject);
-        Upgrade(slot.gameObject);
-        Destroy(slot.gameObject);
-        slotList.Remove(slot);
-        Destroy(gameObject);
-    }
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
 
-    void Upgrade(GameObject upgradeObject)
-    {
-        Debug.Log("업그레이드 완료: ", upgradeObject);
+        player.UpgradeCharacter(slot.upgrade);
+        // slotList.Remove(slot);
+        // slot.gameObject.SetActive(false);
+        gameObject.SetActive(false);
+        Time.timeScale = 1f;
     }
     /*
         업그레이드 종류

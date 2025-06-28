@@ -482,7 +482,6 @@ GameObject:
   - component: {fileID: 8994533657603110864}
   - component: {fileID: 8994533657603110866}
   - component: {fileID: 8994533657603110865}
-  - component: {fileID: 4852367495834468464}
   - component: {fileID: 5322093826550809606}
   m_Layer: 5
   m_Name: UpgradeSlot
@@ -550,18 +549,6 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
---- !u!114 &4852367495834468464
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8994533657603110863}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b1499c1c301a4784da61ce433bbff05d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &5322093826550809606
 MonoBehaviour:
   m_ObjectHideFlags: 0
