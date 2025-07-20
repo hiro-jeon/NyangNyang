@@ -11,14 +11,26 @@ public class RangedWeapon : Weapon
     [Header("Projectile Stats")]
     public float projectileSpeed;
 
+    public override void Attack(Vector2 direction)   
+    {
+        Vector3 targetPosition = transform.position + (Vector3)direction.normalized * 5f;
+
+        GameObject fakeTarget = new GameObject("FakeTarget");
+        fakeTarget.transform.position = targetPosition;
+
+        Attack(fakeTarget.transform);
+        Destroy(fakeTarget, 1f);
+    }
+
     public override void Attack(Transform target)
     {
         GameObject projObj = Instantiate(projectilePrefab, transform.position, Quaternion.identity);
+        Projectile proj = projObj.GetComponent<Projectile>();
+
         GameObject moverObj = Instantiate(movementPrefab, projObj.transform);
+        Mover mover = moverObj.GetComponent<Mover>();
         moverObj.transform.SetParent(projObj.transform, false);
         
-        Projectile proj = projObj.GetComponent<Projectile>();
-        Mover mover = moverObj.GetComponent<Mover>();
 
         if (proj != null)
         {
@@ -33,16 +45,6 @@ public class RangedWeapon : Weapon
         }
     }
 
-    public override void Attack(Vector2 direction)   
-    {
-        Vector3 targetPosition = transform.position + (Vector3)direction.normalized * 5f;
-
-        GameObject fakeTarget = new GameObject("FakeTarget");
-        fakeTarget.transform.position = targetPosition;
-
-        Attack(fakeTarget.transform);
-        Destroy(fakeTarget, 1f);
-    }
 }
     
 /*

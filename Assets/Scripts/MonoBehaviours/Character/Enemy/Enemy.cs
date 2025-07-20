@@ -48,14 +48,24 @@ public class Enemy : Character
     public override void KillCharacter()
     {
         float coinChance = 0.25f;
-        if (Random.value < coinChance)
-            Instantiate(coinPrefab, transform.position, Quaternion.identity);
         float healthChance = 0.10f;
+        Player player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
+
+        if (Random.value < coinChance)
+        {
+            Instantiate(coinPrefab, transform.position, Quaternion.identity);
+        }
+
         if (Random.value < healthChance)
+        {
             Instantiate(healthPrefab, transform.position, Quaternion.identity);
-        
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<Player>();
-        player.GetExp(exPoints);
+        }
+
+        if (player != null)
+        {
+            player.GetExp(exPoints);
+        }
+
         base.KillCharacter();
     }
 

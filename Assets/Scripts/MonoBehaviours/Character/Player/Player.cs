@@ -160,8 +160,7 @@ public class Player : Character
         {
             case Upgrade.UpgradeType.STATS:
                 Weapon weapon = slot.GetChild(0).GetComponent<Weapon>();
-                weapon.speed += 0.15f; 
-                Debug.Log($"업그레이드 완료[{weapon.gameObject.name}]: 공격속도 +0.15f");
+                weapon.speed += 0.25f; 
                 break ;
             case Upgrade.UpgradeType.WEAPON:
                 Destroy(slot.transform.GetChild(0).gameObject);
