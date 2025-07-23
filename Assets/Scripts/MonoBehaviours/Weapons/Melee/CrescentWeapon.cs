@@ -12,26 +12,26 @@ public class CrescentWeapon : Weapon
     public LayerMask targetLayer;
 
     // 콜라이더 
-    GameObject crescentGO;
+    GameObject crescent;
 
     PolygonCollider2D crescentCollider;
     ContactFilter2D filter;
 
     void Start()
     {
-        crescentGO = new GameObject("crescentCollider");
-        crescentGO.transform.position = transform.position;
-        crescentGO.transform.parent = this.transform;
+        crescent = new GameObject("crescentCollider");
+        crescent.transform.position = transform.position;
+        crescent.transform.parent = this.transform;
 
-        crescentCollider = crescentGO.AddComponent<PolygonCollider2D>();
+        crescentCollider = crescent.AddComponent<PolygonCollider2D>();
         crescentCollider.isTrigger = true;
 
         CrescentColliderBuilder.CreateCresentCollider(
             crescentCollider,
+            transform.right,
             innerRadius,
             outerRadius,
-            segments,
-            transform.right
+            segments
         );
         
         filter = new ContactFilter2D();
@@ -72,8 +72,8 @@ public class CrescentWeapon : Weapon
     {
         direction = direction.normalized;
 
-        Quaternion rotation = Quaternion.FromToRotation(crescentGO.transform.right, direction);
-        crescentGO.transform.rotation = rotation;
+        Quaternion rotation = Quaternion.FromToRotation(crescent.transform.right, direction);
+        crescent.transform.rotation = rotation;
 
         PerformCrescentAttack();
         ShowClawMarker((Vector2)transform.position + direction * outerRadius, outerRadius);
