@@ -8,7 +8,7 @@ public class CrescentWeapon : Weapon
     public float innerRadius = 0.5f;
     public float outerRadius = 2.0f;
 
-    private int segments = 20;
+    private int segments = 30;
     public LayerMask targetLayer;
 
     // 콜라이더 
@@ -19,6 +19,7 @@ public class CrescentWeapon : Weapon
 
     void Start()
     {
+        // 게임 오브젝트 생성
         crescent = new GameObject("crescentCollider");
         crescent.transform.position = transform.position;
         crescent.transform.parent = this.transform;

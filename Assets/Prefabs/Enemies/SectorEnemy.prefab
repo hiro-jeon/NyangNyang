@@ -18,7 +18,7 @@ GameObject:
   - component: {fileID: 3532137732846921386}
   - component: {fileID: 7057137656597603994}
   m_Layer: 11
-  m_Name: PistolEnemy
+  m_Name: SectorEnemy
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -33,7 +33,7 @@ Transform:
   m_GameObject: {fileID: 2120661569571768549}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 0.7, y: 0.7, z: 0.7}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 7202757732829450244}

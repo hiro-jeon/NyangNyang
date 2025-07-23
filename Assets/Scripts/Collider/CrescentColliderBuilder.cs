@@ -26,9 +26,9 @@ public class CrescentColliderBuilder : MonoBehaviour
         Color color
     )
     {
-        Gizmos.color = color;
-
         var points = PointsBuilder.GetCrescentPoints(direction, innerRadius, outerRadius, segments);
+
+        Gizmos.color = color;
 
         for (int i = 0; i < points.Count; i++)
         {

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,11 +11,11 @@ public class PointsBuilder : MonoBehaviour
     )
     {
         List<Vector2> points = new List<Vector2>();
-
         float angleStep = 360f / segments;
+
         for (int i = 0; i <= segments; i++)
         {
-            float angle = i * angleStep * Mathf.Deg2Rad + Mathf.PI;
+            float angle = i * angleStep * Mathf.Deg2Rad;
             Vector2 point = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * radius;
             points.Add(point);
         }
@@ -43,6 +44,35 @@ public class PointsBuilder : MonoBehaviour
         }
         List<Vector2> points = new List<Vector2>(innerPoints);
         points.AddRange(outerPoints);
+        return (points);
+    }
+
+    public static List<Vector2> GetSectorPoints(
+        Vector2 direction,
+        float innerRadius,
+        float outerRadius,
+        int degree,
+        int segments
+    )
+    {
+        List<Vector2> points = new List<Vector2>();
+        float angleStep = (float)degree / segments;
+
+
+        for (int i = 0; i <= segments; i++)
+        {
+            float angle = (i - segments / 2) * angleStep * Mathf.Deg2Rad;
+            Vector2 point = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * outerRadius;
+            points.Add(point);
+        }
+
+        for (int i = 0; i <= segments; i++)
+        {
+            float angle = (segments / 2 - i) * angleStep * Mathf.Deg2Rad;
+            Vector2 point = new Vector2(Mathf.Cos(angle), Mathf.Sin(angle)) * innerRadius;
+            points.Add(point);
+        }
+
         return (points);
     }
 }
